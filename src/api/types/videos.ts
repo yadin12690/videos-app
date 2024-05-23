@@ -1,10 +1,10 @@
 export interface Videos {
-    genres: Genres[];
+    genres: Genre[];
     videos: Video[];
 }
 
 
-type Genres = {
+export type Genre = {
     id: number;
     name: string;
 }

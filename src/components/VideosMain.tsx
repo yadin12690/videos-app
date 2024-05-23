@@ -1,9 +1,11 @@
 'use client'
 import React, { useEffect, useState } from 'react';
 import { VideoCard } from './VideoCard';
-import { Videos } from '@/api/types/videos';
+import { Genre, Videos } from '@/api/types/videos';
 import { SearchComponent } from './SearchComponent';
 import { SearchByYearFilter } from './SearchByYearFilterProps';
+import { NoVideoFound } from './NoVideoFound';
+import { SearchByGenreFilter } from './SearchByGenreFilter';
 
 type VideosMainProps = {
     videos?: Videos;
@@ -13,6 +15,8 @@ export const VideosMain = ({ videos }: VideosMainProps) => {
     const [query, setQuery] = useState('');
     const [filteredVideos, setFilteredVideos] = useState(videos?.videos || []);
     const [selectedYear, setSelectedYear] = useState<number | null>(null);
+    const genres = Array.from(new Set(videos?.genres.map(genre => genre.id)));
+    const [selectedGenres, setSelectedGenres] = useState<Genre[]>([]);
 
 
     useEffect(() => {
@@ -34,12 +38,13 @@ export const VideosMain = ({ videos }: VideosMainProps) => {
 
     return (
         <section>
-            <div className='grid grid-rows-1 sm:grid-rows-1 md:grid-rows-1 lg:grid-rows-1 gap-4 p-4'>
+            <div className='flex flex-col xs:flex-col sm:flex-row gap-4 p-4'>
                 <SearchComponent query={query} setQuery={setQuery} />
                 <SearchByYearFilter videos={videos?.videos || []} setSelectedYear={setSelectedYear} />
+                <SearchByGenreFilter genre={selectedGenres || []} setSelectedGenres={setSelectedGenres} />
             </div>
             <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 p-4">
-                {!filteredVideos.length ? <h1 className='text-center font-bold text-black text-lg'>No videos found </h1> : filteredVideos.map((video, idx) => (
+                {!filteredVideos.length ? <NoVideoFound /> : filteredVideos.map((video, idx) => (
                     <VideoCard video={video} key={idx} />
                 ))}
             </div>

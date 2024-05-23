@@ -18,14 +18,14 @@ export const SearchByYearFilter: React.FC<SearchByYearFilterProps> = ({ videos, 
     };
 
     return (
-        <div className='w-full content-center'>
+        <div className='content-center w-[20%]'>
             <select
                 id="yearFilter"
-                className="w-full mt-2 p-2 border rounded text-black font-semibold focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                className="w-[76%] h-[57%] p-2 border rounded text-black font-semibold focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                 onChange={handleChange}
             >
-                <option value="0">All Years</option>
-                {years.map(year => (
+                <option value="0" >Search by year</option>
+                {years.sort((a, b) => b - a).map(year => (
                     <option key={year} value={year}>{year}</option>
                 ))}
             </select>
