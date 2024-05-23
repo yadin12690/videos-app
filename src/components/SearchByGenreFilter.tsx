@@ -21,10 +21,10 @@ export const SearchByGenreFilter = ({ genres, selectedGenres, setSelectedGenres 
     };
 
     return (
-        <div className='content-center'>
+        <div className='w-full'>
             <select
                 id="genreFilter"
-                className="h-[63%] mt-2 p-2 border rounded text-black"
+                className="w-full h-[63%] mt-2 p-2 border rounded text-black"
                 onChange={handleChange}
                 value={''} // This is an empty value to prevent the select from being controlled by state
             >

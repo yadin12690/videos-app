@@ -18,10 +18,10 @@ export const SearchByYearFilter: React.FC<SearchByYearFilterProps> = ({ videos, 
     };
 
     return (
-        <div className='content-center w-[20%]'>
+        <div className='w-full'>
             <select
                 id="yearFilter"
-                className="w-[76%] h-[57%] p-2 border rounded text-black font-semibold focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                className="w-full h-[57%] p-2 border rounded text-black font-semibold focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                 onChange={handleChange}
             >
                 <option value="0" >Search by year</option>

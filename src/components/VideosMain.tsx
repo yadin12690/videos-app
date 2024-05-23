@@ -45,7 +45,7 @@ export const VideosMain = ({ videos }: VideosMainProps) => {
 
     return (
         <section>
-            <div className='flex flex-col xs:flex-col sm:flex-row gap-4 p-4'>
+            <div className='grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 p-4 place-items-center'>
                 <SearchComponent query={query} setQuery={setQuery} />
                 <SearchByYearFilter videos={videos?.videos || []} setSelectedYear={setSelectedYear} />
                 <SearchByGenreFilter genres={videos?.genres || []} selectedGenres={selectedGenres} setSelectedGenres={setSelectedGenres} />
