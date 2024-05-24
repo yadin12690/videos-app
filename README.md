@@ -1,5 +1,5 @@
 **Live Demo**🌟:
-[https://videos-app-blue.vercel.app//](https://videos-app-blue.vercel.app//)
+[https://videos-app-blue.vercel.app/](https://videos-app-blue.vercel.app/)
 
 ## Getting Started
 
