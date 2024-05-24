@@ -8,6 +8,8 @@ interface SearchByGenreFilterProps {
 }
 
 export const SearchByGenreFilter = ({ genres, selectedGenres, setSelectedGenres }: SearchByGenreFilterProps) => {
+
+
     const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const genreId = parseInt(event.target.value);
         const selectedGenre = genres.find(genre => genre.id === genreId);
@@ -26,7 +28,7 @@ export const SearchByGenreFilter = ({ genres, selectedGenres, setSelectedGenres 
                 id="genreFilter"
                 className="w-full h-[63%] mt-2 p-2 border rounded text-black"
                 onChange={handleChange}
-                value={''} // This is an empty value to prevent the select from being controlled by state
+                value={''}
             >
                 <option disabled value="">Search by genre</option>
                 {genres.map(genre => (

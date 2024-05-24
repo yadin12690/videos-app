@@ -19,6 +19,7 @@ export const VideoCard = ({ video }: VideoCardProps) => {
                     height={800}
                     className='rounded-lg px-2 py-2'
                     alt="Picture of the artist"
+                    priority={true}
                 />
                 <VideoInfo title={video.title} artist={video.artist} year={video.release_year} />
             </div>
